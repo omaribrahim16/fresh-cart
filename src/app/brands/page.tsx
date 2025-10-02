@@ -23,7 +23,7 @@ const Brands = async () => {
             </h1>
 
             <div className=" flex flex-wrap justify-center gap-4">
-                {data.map(function (item: Daum, idx: number) {
+                {data.map(function (item: Brand, idx: number) {
                     return (
                         <Card
                             key={idx}

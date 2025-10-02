@@ -3,12 +3,15 @@
 import { getMyToken } from "@/utilities/token"
 import axios from "axios"
 import { jwtDecode } from "jwt-decode"
-import { string } from "zod"
 
 export async function getUserOrder() {
 
-    const token = await getMyToken()
-    const { id } = jwtDecode(token)
+    const token = await getMyToken() as string
+    interface MyJwtPayload {
+        id: string;
+        // add other properties if needed
+    }
+    const { id } = jwtDecode<MyJwtPayload>(token)
 
     // did console log to jwtdecode to get token as i forgot where to get it
 
