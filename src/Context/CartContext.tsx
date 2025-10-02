@@ -2,9 +2,8 @@ import { AddToCartAction } from '@/CartActions/addToCart'
 import { getUserCartAction } from '@/CartActions/getUserCart'
 import { removeCartItemAction } from '@/CartActions/removeCartItem'
 import { Cart } from '@/types/cart.type'
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
-import { id } from 'zod/v4/locales'
-import error from './../app/error';
+import React, { createContext, useEffect, useState } from 'react'
+
 import { updateCartAction } from '@/CartActions/updateCart'
 import { clearCartAction } from '@/CartActions/clearCart'
 
