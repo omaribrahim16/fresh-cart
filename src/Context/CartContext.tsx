@@ -1,7 +1,7 @@
 import { AddToCartAction } from '@/CartActions/addToCart'
 import { getUserCartAction } from '@/CartActions/getUserCart'
 import { removeCartItemAction } from '@/CartActions/removeCartItem'
-import { Cart } from '@/types/cart.type'
+import { Cart, ProductCart } from '@/types/cart.type'
 import React, { createContext, useEffect, useState } from 'react'
 
 import { updateCartAction } from '@/CartActions/updateCart'
@@ -14,7 +14,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
     const [numOfCartItems, setNumOfCartItems] = useState(0)
     const [totalCartPrice, setTotalCartPrice] = useState(0)
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState<ProductCart[]>([])
     const [isLoading, setIsLoading] = useState(false)
     const [cartId, setCartId] = useState("")
 
