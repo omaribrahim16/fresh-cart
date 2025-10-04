@@ -11,7 +11,7 @@ const AddBtnCart = ({ id }: { id: string }) => {
     const { addProductToCart }: any = useContext(cartContext)
 
     async function handleAddCart() {
-        const data = await addProductToCart(id)
+        const data: any = await addProductToCart(id)
         if (data.status === 'success') {
             console.log(data);
             toast.success(data.message, {
