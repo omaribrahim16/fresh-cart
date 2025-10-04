@@ -6,10 +6,21 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { updateCartAction } from '@/CartActions/updateCart'
 import { clearCartAction } from '@/CartActions/clearCart'
+import { CartContextType } from '@/types/cartcontext.type'
 
-export const cartContext: any = createContext({})
+export const cartContext = createContext<CartContextType>({
+    numOfCartItems: 0,
+    products: [],
+    totalCartPrice: 0,
+    isLoading: false,
+    cartId: '',
 
-
+    addProductToCart: async () => { },
+    removeCartItem: async () => { },
+    updateCart: async () => { },
+    clearCart: async () => { },
+    afterPayment: () => { },
+})
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
