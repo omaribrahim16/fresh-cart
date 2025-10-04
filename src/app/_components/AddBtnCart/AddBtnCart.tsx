@@ -12,7 +12,7 @@ const AddBtnCart = ({ id }: { id: string }) => {
 
     async function handleAddCart() {
         const data = await addProductToCart(id)
-        if (data.status === "success") {
+        if (data.status === 'success') {
             console.log(data);
             toast.success(data.message, {
                 duration: 1000,
@@ -20,7 +20,7 @@ const AddBtnCart = ({ id }: { id: string }) => {
             })
         }
         else {
-            console.log(data);
+            // console.log(data);
 
             toast.error("failed to add this product", {
                 duration: 1000,
