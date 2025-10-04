@@ -7,7 +7,9 @@ import React, { createContext, useEffect, useState } from 'react'
 import { updateCartAction } from '@/CartActions/updateCart'
 import { clearCartAction } from '@/CartActions/clearCart'
 
-export const cartContext = createContext({})
+export const cartContext: any = createContext({})
+
+
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
