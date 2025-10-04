@@ -27,7 +27,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
         try {
             const data = await AddToCartAction(id)
-            getUserCart()   // to update cart details in navbar and display
+            await getUserCart()   // to update cart details in navbar and display
             return data
         } catch (error) {
             console.log(error)
