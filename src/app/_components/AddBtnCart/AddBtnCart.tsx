@@ -12,7 +12,7 @@ const AddBtnCart = ({ id }: { id: string }) => {
 
     async function handleAddCart() {
         const data = await addProductToCart(id)
-        if (data.status === "success") {
+        if (data?.status === "success") {
             toast.success(data.message, {
                 duration: 1000,
                 position: "top-center"
