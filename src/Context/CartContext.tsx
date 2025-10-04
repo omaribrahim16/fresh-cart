@@ -15,10 +15,10 @@ export const cartContext = createContext<CartContextType>({
     isLoading: false,
     cartId: '',
 
-    addProductToCart: async () => { },
-    removeCartItem: async () => { },
-    updateCart: async () => { },
-    clearCart: async () => { },
+    addProductToCart: async (_id: string) => undefined,
+    removeCartItem: async (_id: string) => undefined,
+    updateCart: async (_id: string, _count: number) => undefined,
+    clearCart: async () => undefined,
     afterPayment: () => { },
 })
 
@@ -72,15 +72,16 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
-    async function clearCart() {
+    async function clearCart(): Promise<Cart | undefined> {
         try {
-            const data = await clearCartAction()
+            const data: Cart = await clearCartAction()
             setNumOfCartItems(0)
             setProducts([])
             setTotalCartPrice(0)
             return data
         } catch (error) {
             console.log(error)
+            return undefined
         }
     }
 
