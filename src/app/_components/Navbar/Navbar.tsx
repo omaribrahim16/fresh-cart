@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 const Navbar = () => {
 
     const { data: session, status } = useSession()
-    const { numOfCartItems } = useContext(cartContext)
+    const { numOfCartItems }: any = useContext(cartContext)
 
 
     return (

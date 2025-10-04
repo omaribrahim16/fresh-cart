@@ -8,7 +8,7 @@ import { toast } from 'sonner'
 const AddBtnCart = ({ id }: { id: string }) => {
 
 
-    const { addProductToCart } = useContext(cartContext)
+    const { addProductToCart }: any = useContext(cartContext)
 
     async function handleAddCart() {
         const data = await addProductToCart(id)

@@ -2,6 +2,10 @@ export interface Brand {
     results: number
     metadata: Metadata
     data: Daum[]
+    image: string
+    name: string
+
+
 }
 
 export interface Metadata {

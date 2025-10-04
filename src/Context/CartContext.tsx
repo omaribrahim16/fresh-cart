@@ -6,25 +6,10 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { updateCartAction } from '@/CartActions/updateCart'
 import { clearCartAction } from '@/CartActions/clearCart'
-// import { CartContextType } from '@/types/cartcontext.type'
 
-// export const cartContext = createContext<CartContextType>({
-//     numOfCartItems: 0,
-//     products: [],
-//     totalCartPrice: 0,
-//     isLoading: false,
-//     cartId: '',
 
-//     addProductToCart: async (_id: string) => undefined,
-//     removeCartItem: async (_id: string) => undefined,
-//     updateCart: async (_id: string, _count: number) => undefined,
-//     clearCart: async () => undefined,
-//     afterPayment: () => { },
-// })
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export const cartContext: any = createContext({})
-/* eslint-enable @typescript-eslint/no-explicit-any */
+
 
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
@@ -77,16 +62,15 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
-    async function clearCart(): Promise<Cart | undefined> {
+    async function clearCart() {
         try {
-            const data: Cart = await clearCartAction()
+            const data = await clearCartAction()
             setNumOfCartItems(0)
             setProducts([])
             setTotalCartPrice(0)
             return data
         } catch (error) {
             console.log(error)
-            return undefined
         }
     }
 
