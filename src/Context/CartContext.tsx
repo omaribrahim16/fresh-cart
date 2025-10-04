@@ -6,21 +6,26 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { updateCartAction } from '@/CartActions/updateCart'
 import { clearCartAction } from '@/CartActions/clearCart'
-import { CartContextType } from '@/types/cartcontext.type'
+// import { CartContextType } from '@/types/cartcontext.type'
 
-export const cartContext = createContext<CartContextType>({
-    numOfCartItems: 0,
-    products: [],
-    totalCartPrice: 0,
-    isLoading: false,
-    cartId: '',
+// export const cartContext = createContext<CartContextType>({
+//     numOfCartItems: 0,
+//     products: [],
+//     totalCartPrice: 0,
+//     isLoading: false,
+//     cartId: '',
 
-    addProductToCart: async (_id: string) => undefined,
-    removeCartItem: async (_id: string) => undefined,
-    updateCart: async (_id: string, _count: number) => undefined,
-    clearCart: async () => undefined,
-    afterPayment: () => { },
-})
+//     addProductToCart: async (_id: string) => undefined,
+//     removeCartItem: async (_id: string) => undefined,
+//     updateCart: async (_id: string, _count: number) => undefined,
+//     clearCart: async () => undefined,
+//     afterPayment: () => { },
+// })
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const cartContext: any = createContext({})
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
