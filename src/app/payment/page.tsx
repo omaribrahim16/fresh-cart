@@ -65,15 +65,15 @@ const Payment = () => {
             console.log(data)
 
             if (data.status === "success") {
-                // window.location.href = data.session.url
-                toast.success(data.status, {
-                    position: "top-center",
-                    duration: 1000
-                })
-                afterPayment()
-                router.push("/allorders")
+                window.location.href = data.session.url
             }
 
+            // toast.success(data.status, {
+            //     position: "top-center",
+            //     duration: 1000
+            // })
+            afterPayment()
+            // router.push("/allorders")
 
         } catch (error) {
             console.log(error)
