@@ -68,17 +68,17 @@ const Payment = () => {
                 window.location.href = data.session.url
             }
 
-            // toast.success(data.status, {
-            //     position: "top-center",
-            //     duration: 1000
-            // })
-            afterPayment()
-            // router.push("/allorders")
+
 
         } catch (error) {
             console.log(error)
         }
-
+        // toast.success(data.status, {
+        //     position: "top-center",
+        //     duration: 1000
+        // })
+        // afterPayment()
+        // router.push("/allorders")
 
     }
     return (
