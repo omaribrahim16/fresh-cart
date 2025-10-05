@@ -62,7 +62,7 @@ const Payment = () => {
 
         try {
             const data = await onlinePaymentAction(cartId, values)
-            console.log(data)
+            // console.log(data)
 
             if (data.status === "success") {
                 window.location.href = data.session.url
